@@ -1,0 +1,155 @@
+{
+    "info": {
+        "_postman_id": "eecf9f03-7160-4227-8bf7-d428cc4dcd05",
+        "name": "auth app",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "register  user",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/users/register",
+                    "path": [
+                        "users",
+                        "register"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\"fname\":\"appu\",\n\"lname\":\"tech\"\n\"email\":\"appu@gmail.com\",\n\"mobile\":7736408809,\n\"password\":\"Narayana20\"\n}"
+                }
+            }
+        },
+        {
+            "name": "login user",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/api/auth//admin/login",
+                    "path": [
+                        "api",
+                        "auth",
+                        "admin",
+                        "login"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"email\":\"roopa@gmail.com\",\n  \"password\":\"roopa\"\n}"
+                }
+            }
+        },
+        {
+            "name": "change password",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/api/auth/change-password",
+                    "path": [
+                        "api",
+                        "auth",
+                        "change-password"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "*/*",
+                        "disabled": true
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "Thunder Client (https://www.thunderclient.com)",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"newPassword\":\"appu\",\n  \"confirmPassword\":\"appu\"\n}"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDcxYTZiZGYyYmM2ZmE0Njc5Y2MxZjAiLCJpYXQiOjE2ODUxODEwMjAsImV4cCI6MTY4NTM1MzgyMH0.vJ5ZR9xaxryFJvTpKaumvXL1jcD1jYIuc85yX0my2r0",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "get home page",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/admin/packagecategory",
+                    "path": [
+                        "admin",
+                        "packagecategory"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "*/*",
+                        "disabled": true
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "Thunder Client (https://www.thunderclient.com)",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"category\":\"MealBox\"\n \n}"
+                }
+            }
+        }
+    ]
+}
