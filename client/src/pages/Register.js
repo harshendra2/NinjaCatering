@@ -60,18 +60,7 @@ function Register() {
     }
   };
 
-  const userValid = () => {
-    let token = localStorage.getItem("userdbtoken");
-    if (!token) {
-     navigate("/")
-    } else {
-      navigate("/dashboard");
-    }
-  };
 
-  useEffect(() => {
-    userValid();
-  }, []);
 
   return (
     <MDBContainer fluid style={{ backgroundColor: "black" }}>
