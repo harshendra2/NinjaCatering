@@ -1,3 +1,4 @@
+import { Suspense,useState ,useEffect} from "react";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Otp from "./pages/Otp";
@@ -24,15 +25,30 @@ import EditCustompageAddress from "./pages/EditAddressCustomepage";
 import TrackingMap from "./pages/Livelocation";
 import StripeChckout from "./pages/StripeCheckout";
 import ViewOrder from "./pages/ViewOrders";
+import Loader from "./pages/Loader"
 
 
 
 function AppTemp() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
    
   return (
    
     <>
       <ToastContainer />
+      <Suspense fallback={<Loader />}>
+      {isLoading ?(
+        <Loader/>
+      ):(
+        
+     
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -56,6 +72,9 @@ function AppTemp() {
         <Route path="*" element={<Error />} />
         </Route>
       </Routes>
+     
+       )}
+       </Suspense>
     </>
   );
 }

@@ -63,7 +63,7 @@ function Header() {
               Home
             </Nav.Link>
             {/* sample testing */}
-            {category.map((cate,index)=>(
+            {category && category.map((cate,index)=>(
                <Nav.Link
                as={Link}
                to={`/ninjabuffet/${cate._id}`}
